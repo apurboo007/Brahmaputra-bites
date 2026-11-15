@@ -36,4 +36,9 @@ This is a frontend prototype. Checkout is simulated: it does not connect to a re
 - Secure payment gateway integration
 
 ## Author
-Add your name, course, semester and institution details here before submission.
+
+Apurba Raj Bhuyan
+Bachelor of Technology (B.Tech)
+Computer Science and Engineering (CSE)
+Assam Down Town University
+Industry Integrated – Sunstone
