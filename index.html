@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brahmaputra Bites — discover and order the flavours of Assam.">
+  <title>Brahmaputra Bites | Taste of Assam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">A little taste of Assam, delivered with love <span>✦</span> Freshly prepared, always</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Brahmaputra Bites home">
+      <span class="brand-mark">BB</span>
+      <span><strong>Brahmaputra</strong><small>BITES · TASTE OF ASSAM</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#menu">Explore menu</a><a href="#story">Our story</a>
+    </nav>
+    <button class="cart-trigger" id="openCart" aria-label="Open shopping cart">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> ROOTED IN ASSAM. MADE FOR YOU.</p>
+        <h1>Good food.<br><em>Great stories.</em></h1>
+        <p class="hero-text">From comforting Assamese classics to everyday favourites, discover a menu that feels like coming home.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#menu">Explore the menu <span>↗</span></a><span class="delivery-note">✦ Carefully packed · Made fresh</span></div>
+        <div class="hero-stats"><div><strong>12+</strong><small>Local favourites</small></div><div><strong>4.9/5</strong><small>Our food rating</small></div><div><strong>30 min</strong><small>Demo delivery time</small></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image-wrap"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=85" alt="A colourful Indian meal served on a plate"></div>
+        <div class="floating-note"><span>✳</span><div><strong>Local flavours</strong><small>Big on comfort</small></div></div>
+        <div class="round-stamp">TASTE<br>OF<br>ASSAM</div>
+      </div>
+    </section>
+
+    <section class="menu-section section-wrap" id="menu">
+      <div class="section-heading">
+        <div><p class="eyebrow">A MENU WITH A STORY</p><h2>Find your <em>favourite.</em></h2></div>
+        <p>Explore comforting plates, bold flavours<br>and little treats for every craving.</p>
+      </div>
+      <div class="menu-tools">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search dishes..." aria-label="Search dishes"></label>
+        <div class="category-list" id="categoryList" aria-label="Filter by category">
+          <button class="category active" data-category="All">All dishes</button>
+          <button class="category" data-category="Assamese">Assamese</button>
+          <button class="category" data-category="Meals">Meals</button>
+          <button class="category" data-category="Snacks">Snacks</button>
+          <button class="category" data-category="Drinks">Drinks</button>
+        </div>
+      </div>
+      <div class="food-grid" id="foodGrid"></div>
+      <p class="empty-state hidden" id="emptyState">No dishes found. Try another search.</p>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="story-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="A table full of freshly prepared food"></div>
+      <div class="story-copy"><p class="eyebrow">MORE THAN A MEAL</p><h2>Our roots are local.<br><em>Our table is open.</em></h2><p>Brahmaputra Bites is a student project celebrating the food culture and warm hospitality of Assam. We bring familiar regional inspiration into a simple, friendly online ordering experience.</p><a href="#menu" class="text-link">Find something delicious <span>→</span></a></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">BB</span><span><strong>Brahmaputra</strong><small>BITES · TASTE OF ASSAM</small></span></a><p>Made with care in the spirit of Assam.</p><small>© 2026 Brahmaputra Bites · Student project demonstration</small></footer>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your cart</h2></div><button class="icon-btn" id="closeCart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom"><div class="bill-row"><span>Subtotal</span><strong id="subtotal">₹0</strong></div><div class="bill-row"><span>Delivery</span><strong id="deliveryFee">₹0</strong></div><div class="bill-row total"><span>Total</span><strong id="total">₹0</strong></div><button class="primary-btn checkout-btn" id="checkoutBtn">Continue to checkout <span>→</span></button><p class="cart-disclaimer">Demo checkout only. No real payment is collected.</p></div>
+  </aside>
+
+  <section class="modal hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="icon-btn modal-close" id="closeCheckout" aria-label="Close checkout">×</button>
+    <p class="eyebrow">ALMOST THERE</p><h2 id="checkoutTitle">Your details</h2>
+    <p class="modal-intro">Enter your details to create a demo order.</p>
+    <form id="checkoutForm">
+      <label>Full name<input name="customerName" required minlength="2" placeholder="Your name"></label>
+      <label>Phone number<input name="phone" required inputmode="numeric" pattern="[0-9]{10}" placeholder="10-digit mobile number"></label>
+      <label>Delivery address<textarea name="address" required minlength="8" placeholder="House, street, area and city"></textarea></label>
+      <button class="primary-btn full-btn" type="submit">Place demo order <span>→</span></button>
+    </form>
+    <p class="cart-disclaimer">This prototype does not send orders to a restaurant.</p>
+  </section>
+
+  <section class="success-modal hidden" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="success-icon">✓</div><p class="eyebrow">ORDER CREATED</p><h2 id="successTitle">Thank you!</h2><p id="successMessage">Your demo order has been created.</p><button class="primary-btn full-btn" id="finishOrder">Back to menu</button>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
