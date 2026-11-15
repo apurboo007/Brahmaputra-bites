@@ -36,9 +36,15 @@ This is a frontend prototype. Checkout is simulated: it does not connect to a re
 - Secure payment gateway integration
 
 ## Author
+## About the Developer
 
-Apurba Raj Bhuyan
-Bachelor of Technology (B.Tech)
-Computer Science and Engineering (CSE)
-Assam Down Town University
-Industry Integrated – Sunstone
+**Name:** Apurba Raj Bhuyan
+
+**Course:** Bachelor of Technology (B.Tech)
+
+**Branch:** Computer Science and Engineering (CSE)
+
+**University:** Assam Down Town University
+
+**Program:** Industry Integrated – Sunstone
+
